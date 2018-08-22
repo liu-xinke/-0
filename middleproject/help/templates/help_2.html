@@ -1,0 +1,66 @@
+{% extends 'help_1.html' %}
+
+{% block title %}
+2. 项目结构
+{% endblock %}
+
+{% block status %}
+<li class="toctree-l1"><a class="current reference internal" href="/help/1">1.项目介绍</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="/help/2">2. 项目结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/3">3. 使用方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/4">4. 界面预览</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/5">5. 网站搭建</a></li>
+{% endblock %}
+
+{% block contain %}
+<h1>2. 项目结构</h1>
+<p>本项目由 服务器 客户端 数据库 三个部分组成</p>
+
+<div class='menu_div'>
+	<p class='menu'>middleproject/</p>
+	<p class='menu'>├── client 客户端文件夹</p>
+	<p class='menu'>│       ├── game1 猜拳游戏文件夹</p>
+	<p class='menu'>│       │       ├── game1_client.py 联机版游戏文件</p>
+	<p class='menu'>│       │       ├── game1_secondground.py 二级大厅文件</p>
+	<p class='menu'>│       │       └── game1_single.py 单人版游戏文件</p>
+	<p class='menu'>│       ├── game2 比反应游戏文件夹</p>
+	<p class='menu'>│       │       ├── game2_client.py 联机版游戏文件</p>
+	<p class='menu'>│       │       ├── game2_secondground.py 二级大厅文件</p>
+	<p class='menu'>│       │       └── game2_single.py 单人版游戏文件</p>
+	<p class='menu'>│       ├── game3 五子棋游戏文件夹</p>
+	<p class='menu'>│       │       ├── ai_normal.py 五子棋单人版电脑对手文件</p>
+	<p class='menu'>│       │       ├── game3_client.py 联机版游戏文件</p>
+	<p class='menu'>│       │       ├── game3_secondground.py 二级大厅文件</p>
+	<p class='menu'>│       │       └── game3_single.py 单人版游戏文件</p>
+	<p class='menu'>│       ├── gameground.py 游戏大厅界面文件</p>
+	<p class='menu'>│       ├── img 存放图片文件夹</p>
+	<p class='menu'>│       ├── img_reco.py 广告推送文件</p>
+	<p class='menu'>│       ├── login_pack.py 登录界面文件</p>
+	<p class='menu'>│       ├── mp3player 音乐播放器文件夹</p>
+	<p class='menu'>│       │       ├── music 存放音乐文件夹</p>
+	<p class='menu'>│       │       └── play.py 播放器主文件</p>
+	<p class='menu'>│       ├── regist.py 注册界面文件</p>
+	<p class='menu'>│       ├── reset_psw.py 修改密码界面文件</p>
+	<p class='menu'>│       └── shop.py 积分商城界面文件</p>
+	<p class='menu'>├── database 数据库文件夹</p>
+	<p class='menu'>│       ├── buried_point2.py 数据库埋点文件</p>
+	<p class='menu'>│       ├── buried_point.py 数据库埋点文件</p>
+	<p class='menu'>│       └── database_1.py 数据库处理文件</p>
+	<p class='menu'>├── main.py 启动客户端文件</p>
+	<p class='menu'>├── ReadMe.txt 帮助文档</p>
+	<p class='menu'>├── replaceip.py 更换服务器ip文件</p>
+	<p class='menu'>├── server 服务器文件夹</p>
+	<p class='menu'>│       ├── game1_server.py 猜拳游戏服务器</p>
+	<p class='menu'>│       ├── game2_server.py 比反应游戏服务器</p>
+	<p class='menu'>│       ├── game3_server.py 五子棋游戏服务器</p>
+	<p class='menu'>│       └── main_server.py 主服务器</p>
+	<p class='menu'>└── start_server.sh 快速启动服务器脚本</p>
+	<p></p>
+</div>
+<p></p>
+{% endblock %}
+
+{% block foot %}
+<a href="/help/3" class="btn btn-neutral float-right" title="使用方法">Next</a>
+<a href="/help/1" class="btn btn-neutral" title="项目介绍">Previous</a>
+{% endblock %}

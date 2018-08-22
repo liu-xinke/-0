@@ -1,0 +1,71 @@
+{% extends '_index.html' %}
+
+{% block title%}
+平台信息统计
+{% endblock %}
+
+{% block info_href %}
+<a href="/player/{{name}}">
+{% endblock %}
+               
+{% block rank_href %}                        
+<a href="/player/&rank/{{name}}">
+{% endblock %}
+
+{% block plat_href %}
+<a class="active-menu" href="/player/&info/{{name}}">
+{% endblock %}
+
+{% block contain %}
+<div class="row">
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                全国用户分布
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart1|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                全平台活跃度情况
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart3|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                全国游戏点击量分布
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart4|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                全平台道具情况统计
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart2|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

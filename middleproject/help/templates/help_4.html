@@ -1,0 +1,68 @@
+{% extends 'help_1.html' %}
+{% load static %}
+
+{% block title %}
+4. 界面预览
+{% endblock %}
+
+{% block status %}
+<li class="toctree-l1"><a class="current reference internal" href="/help/1">1.项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/2">2. 项目结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/3">3. 使用方法</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="/help/4">4. 界面预览</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/5">5. 网站搭建</a></li>
+{% endblock %}
+
+{% block contain %}
+<h1>4. 界面预览</h1>
+<h3>登录界面</h3>
+<div align="center">
+	<img src="{% static '/img/dl.png' %}">
+	<p></p>
+</div>
+<h3>注册界面</h3>
+<div align="center">
+	<img src="{% static '/img/zc.png' %}">
+	<p></p>
+</div>
+<h3>一级游戏大厅界面</h3>
+<div align="center">
+	<img src="{% static '/img/yj.png' %}">
+	<p></p>
+</div>
+<h3>修改密码界面</h3>
+<div align="center">
+	<img src="{% static '/img/xg.png' %}">
+	<p></p>
+</div>
+<h3>积分商城界面</h3>
+<div align="center">
+	<img src="{% static '/img/jf.png' %}">
+	<p></p>
+</div>
+<h3>二级游戏大厅界面</h3>
+<div align="center">
+	<img src="{% static '/img/ej.png' %}">
+	<p></p>
+</div>
+<h3>猜拳游戏界面</h3>
+<div align="center">
+	<img src="{% static '/img/cq.png' %}">
+	<p></p>
+</div>
+<h3>比反应游戏界面</h3>
+<div align="center">
+	<img src="{% static '/img/bfy.png' %}">
+	<p></p>
+</div>
+<h3>五子棋游戏界面</h3>
+<div align="center">
+	<img src="{% static '/img/wzq.png' %}">
+	<p></p>
+</div>
+
+{% endblock %}
+{% block foot %}
+<a href="/help/5" class="btn btn-neutral float-right" title="网站搭建">Next</a>
+<a href="/help/3" class="btn btn-neutral" title="项目结构">Previous</a>
+{% endblock %}

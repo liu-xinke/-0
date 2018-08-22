@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+    <title>出错啦!</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'assets_error/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'assets_error/css/font-awesome.css' %}" rel="stylesheet">
+    <link href="{% static 'assets_error/css/bootstrap-theme.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets_error/css/animations.css' %}">
+
+    <!-- siimple style -->
+    <link href="{% static 'assets_error/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="cloud floating">
+        <img src="{% static 'assets_error/img/cloud.png' %}" alt="Scoop Themes">
+    </div>
+
+    <div class="cloud pos1 fliped floating">
+        <img src="{% static 'assets_error/img/cloud.png' %}" alt="Scoop Themes">
+    </div>
+
+    <div class="cloud pos2 floating">
+        <img src="{% static 'assets_error/img/cloud.png' %}" alt="Scoop Themes">
+    </div>
+
+    <div class="cloud pos3 fliped floating">
+        <img src="{% static 'assets_error/img/cloud.png' %}" alt="Scoop Themes">
+    </div>
+
+
+    <div id="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h1 class="subtitle">要查询的信息不存在!</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <a href="/" class="back_btn">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>-------杭州西湖AID1804 神码局-------</p>
+    </footer>                    
+</body>
+
+</html>

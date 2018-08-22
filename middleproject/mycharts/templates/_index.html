@@ -1,0 +1,221 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>神码局信息查询系统</title>
+    <!-- Bootstrap Styles-->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="{% static 'assets/js/morris/morris-0.4.3.min.css' %}" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="{% static 'assets/css/custom-styles.css' %}" rel="stylesheet" />
+    {% for jsfile_name in script_list %}
+        <script src="{{ host }}/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/player/&back/">神码局信息查询系统</a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        {% block info_href %}
+                        <a class="active-menu" href="/player/{{name}}">
+                        {% endblock %}
+                        <i class="fa fa-dashboard"></i> 个人信息</a>
+                    </li>
+					<li>
+                        {% block rank_href %}                        
+                        <a href="/player/&rank/{{name}}">
+                        {% endblock %}
+                        <i class="fa fa-bar-chart-o"></i> 排行榜</a>
+                    </li>                    
+                    <li>
+                        {% block plat_href %}
+                        <a href="/player/&info/{{name}}">
+                        {% endblock %}
+                        <i class="fa fa-table"></i> 平台信息统计</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            {% block title%}
+                            基本信息
+                            {% endblock %}
+                        </h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                {% block contain %}
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-green">
+                            <div class="panel-body">
+                                <i class="fa fa-bar-chart-o fa-5x"></i>
+                                <h3>{{name}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-green">
+                                用户名
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-blue">
+                            <div class="panel-body">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                                <h3>{{point}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-blue">
+                                积分
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa fa-comments fa-5x"></i>
+                                <h3>{{signin}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                累计签到次数
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-brown">
+                            <div class="panel-body">
+                                <i class="fa fa-users fa-5x"></i>
+                                <h3>{{member}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-brown">
+                                剩余会员时长
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-purple">
+                            <div class="panel-body">
+                                <table>
+                                    <tr>
+                                        <td>改名卡</td>
+                                        <td>&nbsp;: {{prop1}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>会员卡</td>
+                                        <td>&nbsp;: {{prop2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>积分清零卡</td>
+                                        <td>&nbsp;: {{prop3}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="panel-footer back-footer-purple">
+                                拥有道具
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                活跃天数
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-bar-chart">
+                                    {{ myechart4|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                游戏胜率
+                            </div>
+                            <div class="index_charts1">
+                                <div class='index_charts'>
+                                    {{ myechart1|safe }}
+                                </div>
+                                <div class='index_charts'>                            
+                                    {{ myechart2|safe }}
+                                </div>
+                                <div class='index_charts'>                            
+                                    {{ myechart3|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                最近游戏时间
+                            </div> 
+                            <div class="panel-body1">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <tr>
+                                            <th>五子棋</th>                      
+                                            <td>{{times3}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>猜拳</th>
+                                            <td>{{times1}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>比反应</th>
+                                            <td>{{times2}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endblock %}
+                <!-- /. ROW  -->
+				<footer><p>-------杭州西湖AID1804 神码局-------</p></footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+</body>
+
+</html>

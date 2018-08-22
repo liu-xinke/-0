@@ -1,0 +1,51 @@
+{% extends 'help_1.html' %}
+{% load static %}
+
+{% block title %}
+5. 网站搭建
+{% endblock %}
+
+{% block status %}
+<li class="toctree-l1"><a class="current reference internal" href="/help/1">1.项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/2">2. 项目结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/3">3. 使用方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/4">4. 界面预览</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="/help/5">5. 网站搭建</a></li>
+{% endblock %}
+
+{% block contain %}
+<h1>5. 网站搭建</h1>
+<h3>5.1 所需模块</h3>
+<h5><b>django</b></h5>
+<p>测试环境中使用django 1.11.8 版本</p>
+<p>安装 django : sudo pip3 install django==1.11.8</p>
+<h5><b>pyecharts</b></h5>
+<p>参考网址:<b><a href='http://pyecharts.org/#/' target="_blank">http://pyecharts.org/</a></b></p>
+<p>安装 pyecharts : sudo pip3 install pyecharts</p>
+<p>安装 pyecharts 额外包</p>
+<p>1. 安装国际地图包</p>
+<p>sudo pip3 install echarts-countries-pypkg</p>
+<p>2. 安装中国省份包</p>
+<p>sudo pip3 install echarts-china-provinces-pypkg</p>
+<p>3. 下载所需js包并挂载在服务器上</p>
+<p><b><a href="https://github.com/pyecharts/assets" target="_blank">https://github.com/pyecharts/assets</a></b></p>
+<p>git clone https://github.com/pyecharts/assets.git</p>
+<h5><b>pandas</b></h5>
+<p>安装 pandas : sudo pip3 install pandas</p>
+<h5><b>pymysql</b></h5>
+<p>安装 pymysql : sudo pip3 install pymysql</p>
+<h3>5.2 添加应用</h3>
+<p>在django中添加 <b>index help mycharts</b> 三个应用</p>
+<p><b>index</b> 用于主页页面显示</p>
+<p><b>help</b> 用于帮助文档页面显示</p>
+<p><b>mycharts</b> 用于信息查询页面显示</p>
+<h3>5.3 生成图表</h3>
+<p>图表生成函数位于mycharts应用下的<b>views.py</b>文件</p>
+<p>实现步骤</p>
+<p>①读取数据库数据 -----> ②调用图表生成函数生成图表 -----> ③数据传入模板进行显示</p>
+{% endblock %}
+
+{% block foot %}
+<!-- <a href="" class="btn btn-neutral float-right" title="使用方法">Next</a> -->
+<a href="/help/4" class="btn btn-neutral" title="界面预览">Previous</a>
+{% endblock %}

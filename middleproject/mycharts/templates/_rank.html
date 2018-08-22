@@ -1,0 +1,46 @@
+{% extends '_index.html' %}
+
+{% block title%}
+排行榜
+{% endblock %}
+
+{% block info_href %}
+<a href="/player/{{name}}">
+{% endblock %}
+               
+{% block rank_href %}                        
+<a class="active-menu" href="/player/&rank/{{name}}">
+{% endblock %}
+
+{% block plat_href %}
+<a href="/player/&info/{{name}}">
+{% endblock %}
+                        
+{% block contain %}
+<div class="row">
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                积分排行榜
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart1|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                胜率排行榜
+            </div>
+            <div class="panel-body">
+                <div id="morris-bar-chart">
+                    {{ myechart2|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

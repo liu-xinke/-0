@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>神码局平台使用帮助</title>
+    <link href="{% static 'googleapis.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'theme.css' %}" type="text/css">
+  <script src="{% static 'modernizr.js' %}"></script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+          <a href="/">神码局平台使用帮助</a>
+      </div>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">   
+<ul class="current">
+{% block status %}
+<li class="toctree-l1 current"><a class="current reference internal" href="/help/1">1.项目介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/2">2. 项目结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/3">3. 使用方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/4">4. 界面预览</a></li>
+<li class="toctree-l1"><a class="reference internal" href="/help/5">5. 网站搭建</a></li>
+{% endblock %}
+  </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top navbar-header" role="navigation" aria-label="top navigation">
+        <a href="/">神码局游戏平台使用帮助</a>
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="">帮助手册</a> »</li>
+    <li>
+    {% block title %}
+    1. 项目介绍
+	{% endblock %}</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document">   
+  <div class="section" id="tut-intro">
+<span id="id1"></span>
+  {% block contain%}
+  <h1>1. 项目介绍</h1>
+  <h4>作者：杭州西湖AID1804 神码局</h4>
+  <p>本项目以各个游戏平台为模板,实现类似游戏平台的功能。</p>
+  <p>基本实现了 <b>注册/登录 修改密码 在线群聊 音乐播放 积分商城 游戏联机 广告推送</b> 等功能</p>
+  <h3>所需模块</h3>
+  <p>tkinter</p>
+  <p>#可使用sudo apt-get install python3-tk安装</p>
+  <p>pygame</p>
+  <p>#可使用sudo pip3 install pygame安装</p>
+  <p>pymysql</p>
+  <p>#可使用sudo pip3 install pymysql安装</p>
+  <h3>注意事项</h3>
+  <p>建议分辨率：1920*1080</p>
+  <p>否则会造成窗口挤压，影响使用</p>
+  
+  {% endblock %}
+</div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+    	{% block foot %}
+        <a href="/help/2" class="btn btn-neutral float-right" title="项目结构">Next</a>
+        <!-- <a href="" class="btn btn-neutral" title="">Previous</a> -->
+        {% endblock %}
+    </div>
+  <hr>
+  <div role="contentinfo">
+    <p align="center">-------杭州西湖AID1804 神码局-------
+    </p>
+  </div>
+</footer>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</ul>
+</div>
+</nav>
+</div>
+
+</body>
+</html>
